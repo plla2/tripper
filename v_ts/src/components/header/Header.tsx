@@ -17,45 +17,42 @@ const Header = () => {
         <img src={logoIcon} className="logoIcon" />
         <span className="logoText">Tripper</span>
       </Link>
-      <div className="list-container">
-        <ul className="list">
-          {HEADER_LIST.map((item) => (
-            <li key={item.id} className="item">
-              <Link to={item.url}>{item.text}</Link>
-            </li>
-          ))}
-        </ul>
-      </div>
-      <div>
-        <label htmlFor="search">
+      <ul className="list">
+        {HEADER_LIST.map((item) => (
+          <li key={item.id} className="item">
+            <Link to={item.url} className="item-text">
+              {item.text}
+            </Link>
+          </li>
+        ))}
+      </ul>
+      <div className="search-container">
+        <input
+          type="text"
+          id="search"
+          placeholder="지역,테마 등 키워드 입력"
+          className="search-input"
+        />
+        <span className="underline"></span>
+        <Button onClick={() => console.log("검색!")} className="searchBtn">
           <IoSearch />
-        </label>
-        <input type="text" id="search" placeholder="검색" />
+        </Button>
       </div>
-      <div className="info-container">
-        {isLogin ? (
-          <>
-            <Button
-              onClick={() => console.log("로그아웃!")}
-              className="header-btn"
-            >
-              로그아웃
-            </Button>
-            <Button onClick={() => navigate("/mypage")}>
-              <FaUserCircle />
-            </Button>
-          </>
-        ) : (
-          <>
-            <Button onClick={() => navigate("/login")} className="header-btn">
-              로그인
-            </Button>
-            <Button onClick={() => navigate("/signup")} className="header-btn">
-              회원가입
-            </Button>
-          </>
-        )}
-      </div>
+      {isLogin ? (
+        <div className="info-container">
+          <Button onClick={() => navigate("/mypage")} className="user">
+            <FaUserCircle />
+          </Button>
+          <Button onClick={() => console.log("로그아웃!")}>로그아웃</Button>
+        </div>
+      ) : (
+        <div className="info-container">
+          <Button onClick={() => navigate("/login")} className="first">
+            로그인
+          </Button>
+          <Button onClick={() => navigate("/signup")}>회원가입</Button>
+        </div>
+      )}
     </div>
   );
 };
