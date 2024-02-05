@@ -16,7 +16,7 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
     ref?: React.Ref<HTMLButtonElement>
   ) => {
     const classNames =
-      [className, "default-btn"].filter((v) => Boolean(v)).join("") ||
+      [className, "default-btn"].filter((v) => Boolean(v)).join(" ") ||
       undefined;
     return (
       <button ref={ref} className={classNames} onClick={onClick} {...props}>
