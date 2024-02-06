@@ -4,19 +4,25 @@ import { HEADER_LIST } from "../../constants";
 import Button from "../common/button/Button";
 import { IoSearch } from "@react-icons/all-files/io5/IoSearch";
 import { FaUserCircle } from "@react-icons/all-files/fa/FaUserCircle";
+import { HeaderProps } from "../../types";
 import "./header.scss";
 
-interface PropsType {
-  isLogin: boolean;
-  setIsLogin: React.Dispatch<React.SetStateAction<boolean>>;
-}
-
-const Header = ({ isLogin, setIsLogin }: PropsType) => {
+const Header = ({ isLogin, setIsLogin, setLoginType }: HeaderProps) => {
   const navigate = useNavigate();
 
   const logoutFn = () => {
     setIsLogin(false);
     localStorage.removeItem("userInfo");
+  };
+
+  const goLogin = () => {
+    setLoginType(true);
+    navigate("/login");
+  };
+
+  const goSignup = () => {
+    setLoginType(false);
+    navigate("/signup");
   };
 
   return (
@@ -55,10 +61,10 @@ const Header = ({ isLogin, setIsLogin }: PropsType) => {
         </div>
       ) : (
         <div className="info-container">
-          <Button onClick={() => navigate("/login")} className="first">
+          <Button onClick={goLogin} className="first">
             로그인
           </Button>
-          <Button onClick={() => navigate("/signup")}>회원가입</Button>
+          <Button onClick={goSignup}>회원가입</Button>
         </div>
       )}
     </div>

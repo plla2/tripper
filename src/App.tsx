@@ -8,14 +8,37 @@ import { useState } from "react";
 
 const App = () => {
   const [isLogin, setIsLogin] = useState(false);
+  const [loginType, setLoginType] = useState(true);
 
   return (
     <BrowserRouter>
-      <Header isLogin={isLogin} setIsLogin={setIsLogin} />
+      <Header
+        isLogin={isLogin}
+        setIsLogin={setIsLogin}
+        setLoginType={setLoginType}
+      />
       <Routes>
         <Route path="/" element={<Main />} />
-        <Route path="/login" element={<Login setIsLogin={setIsLogin} />} />
-        <Route path="/signup" element={<Signup />} />
+        <Route
+          path="/login"
+          element={
+            <Login
+              setIsLogin={setIsLogin}
+              loginType={loginType}
+              setLoginType={setLoginType}
+            />
+          }
+        />
+        <Route
+          path="/signup"
+          element={
+            <Signup
+              setIsLogin={setIsLogin}
+              loginType={loginType}
+              setLoginType={setLoginType}
+            />
+          }
+        />
         <Route path="/mypage" element={<Mypage />} />
       </Routes>
     </BrowserRouter>
