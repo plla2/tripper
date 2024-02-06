@@ -6,7 +6,7 @@ type ButtonTypes = React.DetailedHTMLProps<
 >;
 
 interface ButtonProps extends ButtonTypes {
-  onClick: () => void;
+  onClick?: () => void;
   children: React.ReactNode;
 }
 
