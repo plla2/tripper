@@ -5,15 +5,23 @@ import Button from "../common/button/Button";
 import { IoSearch } from "@react-icons/all-files/io5/IoSearch";
 import { FaUserCircle } from "@react-icons/all-files/fa/FaUserCircle";
 import "./header.scss";
-import { useState } from "react";
 
-const Header = () => {
+interface PropsType {
+  isLogin: boolean;
+  setIsLogin: React.Dispatch<React.SetStateAction<boolean>>;
+}
+
+const Header = ({ isLogin, setIsLogin }: PropsType) => {
   const navigate = useNavigate();
-  const [isLogin, setIsLogin] = useState(false);
+
+  const logoutFn = () => {
+    setIsLogin(false);
+    localStorage.removeItem("userInfo");
+  };
 
   return (
     <div className="container">
-      <Link className="logo-container" to={"/"}>
+      <Link className="logo-container" to="/">
         <img src={logoIcon} className="logoIcon" />
         <span className="logoText">Tripper</span>
       </Link>
@@ -43,7 +51,7 @@ const Header = () => {
           <Button onClick={() => navigate("/mypage")} className="user">
             <FaUserCircle />
           </Button>
-          <Button onClick={() => console.log("로그아웃!")}>로그아웃</Button>
+          <Button onClick={logoutFn}>로그아웃</Button>
         </div>
       ) : (
         <div className="info-container">

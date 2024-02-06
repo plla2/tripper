@@ -9,7 +9,11 @@ type dataType = {
   password: string;
 };
 
-const Login = () => {
+interface PropsType {
+  setIsLogin: React.Dispatch<React.SetStateAction<boolean>>;
+}
+
+const Login = ({ setIsLogin }: PropsType) => {
   const {
     register,
     handleSubmit,
@@ -20,6 +24,7 @@ const Login = () => {
   const successFn = () => {
     navigate("/");
     localStorage.setItem("userInfo", "login");
+    setIsLogin(true);
   };
 
   const failFn = () => {

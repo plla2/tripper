@@ -4,14 +4,17 @@ import Main from "./pages/main/Main";
 import Login from "./pages/login/Login";
 import Signup from "./pages/signup/Signup";
 import Mypage from "./pages/mypage/Mypage";
+import { useState } from "react";
 
 const App = () => {
+  const [isLogin, setIsLogin] = useState(false);
+
   return (
     <BrowserRouter>
-      <Header />
+      <Header isLogin={isLogin} setIsLogin={setIsLogin} />
       <Routes>
         <Route path="/" element={<Main />} />
-        <Route path="/login" element={<Login />} />
+        <Route path="/login" element={<Login setIsLogin={setIsLogin} />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/mypage" element={<Mypage />} />
       </Routes>
