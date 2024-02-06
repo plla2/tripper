@@ -1,0 +1,90 @@
+@import "../../styles/theme.scss";
+
+.login-container {
+  background-color: $input-bg;
+  width: 70%;
+  height: calc(100vh - 90px);
+  margin: 0 auto;
+  max-width: 1920px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  .wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 45%;
+    height: 60%;
+    border-radius: 15px;
+    background-color: $login-wrapper-bg;
+    .formHeader {
+      display: flex;
+      align-items: center;
+      margin-bottom: 40px;
+      .logoIcon {
+        width: 40px;
+        height: 40px;
+        margin-right: 10px;
+      }
+      .logoText {
+        letter-spacing: 1px;
+        font-weight: bold;
+        font-size: 30px;
+        &::first-letter {
+          color: $text-accent-color;
+        }
+      }
+    }
+    form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+      .loginInp {
+        width: 200px;
+        height: 40px;
+        padding: 0 10px;
+        background-color: $input-bg;
+        border: none;
+        font-size: 13px;
+        border-radius: 5px;
+        &:focus {
+          outline: none;
+        }
+      }
+      .password-container {
+        margin-bottom: 10px;
+      }
+      .err-message {
+        margin: 5px 0;
+        font-size: 12px;
+      }
+      .login-btn {
+        width: 100%;
+        height: 35px;
+        border: none;
+        background-color: $button-bg;
+        color: $text-color;
+        cursor: pointer;
+        letter-spacing: 1px;
+        border-radius: 5px;
+        font-size: 14px;
+        margin-bottom: 25px;
+        transition: background-color 0.4s ease-in-out;
+        &:hover {
+          background-color: $text-accent-color;
+        }
+      }
+    }
+    .formInfo {
+      font-size: 12px;
+      a {
+        &:hover {
+          color: $text-accent-color;
+        }
+      }
+    }
+  }
+}

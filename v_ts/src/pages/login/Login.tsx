@@ -31,37 +31,45 @@ const Login = () => {
   };
   return (
     <div className="login-container">
-      <div className="formHeader">
-        <img src={logoIcon} className="logoIcon" />
-        <span className="logoText">Tripper</span>
-      </div>
-      <form autoComplete="off" onSubmit={handleSubmit(submitForm)}>
-        <div className="id-container">
-          <input
-            type="text"
-            id="id"
-            placeholder="아이디"
-            {...register("id", { required: true, maxLength: 10, minLength: 6 })}
-          />
-          {errors.id && <p className="err-message">아이디는 6~10자입니다.</p>}
+      <div className="wrapper">
+        <div className="formHeader">
+          <img src={logoIcon} className="logoIcon" />
+          <span className="logoText">Tripper</span>
         </div>
-        <div className="password-container">
-          <input
-            type="password"
-            id="password"
-            placeholder="비밀번호"
-            {...register("password", { required: true, minLength: 5 })}
-          />
-          {errors.id && (
-            <p className="err-message">비밀번호는 5자이상입니다.</p>
-          )}
+        <form autoComplete="off" onSubmit={handleSubmit(submitForm)}>
+          <div className="id-container">
+            <input
+              type="text"
+              id="id"
+              placeholder="아이디"
+              className="loginInp"
+              {...register("id", {
+                required: true,
+                maxLength: 10,
+                minLength: 6,
+              })}
+            />
+            {errors.id && <p className="err-message">아이디는 6~10자입니다.</p>}
+          </div>
+          <div className="password-container">
+            <input
+              type="password"
+              id="password"
+              placeholder="비밀번호"
+              className="loginInp"
+              {...register("password", { required: true, minLength: 5 })}
+            />
+            {errors.id && (
+              <p className="err-message">비밀번호는 5자이상입니다.</p>
+            )}
+          </div>
+          <Button type="submit" className="login-btn">
+            로그인
+          </Button>
+        </form>
+        <div className="formInfo">
+          <a href="#">계정찾기</a> {"/"} <a href="#">비밀번호 찾기</a>
         </div>
-        <Button type="submit" className="login-btn">
-          로그인
-        </Button>
-      </form>
-      <div className="formInfo">
-        <a href="#">계정찾기</a> {"/"} <a href="#">비밀번호 찾기</a>
       </div>
     </div>
   );
