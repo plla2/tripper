@@ -111,9 +111,6 @@ const MainSlider = () => {
         delay: 4000,
         disableOnInteraction: false,
       }}
-      pagination={{
-        clickable: true,
-      }}
       navigation={true}
       modules={[Autoplay, Pagination, Navigation]}
       className="mySwiper"
@@ -121,12 +118,15 @@ const MainSlider = () => {
       {get.data &&
         get.data.map((item: itemTypes) => (
           <SwiperSlide key={item.contentid} className="item-container">
-            <img
-              className="slide-img"
-              src={item.firstimage}
-              alt="캐러셀 이미지"
-            />
+            <div className="img-container">
+              <img
+                className="slide-img"
+                src={item.firstimage}
+                alt="캐러셀 이미지"
+              />
+            </div>
             <div className="content-container">
+              <strong className="content-header">Tripper만의 코스 추천</strong>
               <span className="slide-text">{item.title}</span>
               <a href="#" className="slide-link">
                 자세히 보기
