@@ -1,5 +1,11 @@
+import MainSlider from "../../components/mainSlider/MainSlider";
+
 const Main = () => {
-  return <div>Main</div>;
+  return (
+    <>
+      <MainSlider />
+    </>
+  );
 };
 
 export default Main;
