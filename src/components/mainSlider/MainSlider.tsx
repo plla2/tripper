@@ -1,11 +1,15 @@
+import { useState } from "react";
 import { useQuery } from "@tanstack/react-query";
 import { getMainSliderItems } from "../../apis";
-import { Swiper, SwiperSlide } from "swiper/react";
+import { Swiper, SwiperClass, SwiperSlide } from "swiper/react";
 import { Autoplay, Pagination, Navigation } from "swiper/modules";
+import { IoIosArrowBack } from "@react-icons/all-files/io/IoIosArrowBack";
+import { IoIosArrowForward } from "@react-icons/all-files/io/IoIosArrowForward";
 import "./mainslider.scss";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
+import Button from "../common/button/Button";
 
 type itemTypes = {
   contentid: string;
@@ -19,6 +23,16 @@ const MainSlider = () => {
     queryFn: getMainSliderItems,
   });
 
+  const [swiperIndex, setSwiperIndex] = useState(0);
+  const [swiper, setSwiper] = useState<SwiperClass>();
+
+  const handlePrev = () => {
+    swiper?.slidePrev();
+  };
+  const handleNext = () => {
+    swiper?.slideNext();
+  };
+
   return (
     <Swiper
       spaceBetween={30}
@@ -29,6 +43,10 @@ const MainSlider = () => {
       }}
       navigation={true}
       modules={[Autoplay, Pagination, Navigation]}
+      onActiveIndexChange={(e) => setSwiperIndex(e.realIndex)}
+      onSwiper={(e) => {
+        setSwiper(e);
+      }}
       className="mySwiper"
     >
       {getMainSlider.isLoading && <div>Loading...</div>}
@@ -51,6 +69,21 @@ const MainSlider = () => {
             </div>
           </SwiperSlide>
         ))}
+      <div className="info-container">
+        <div className="btn-container">
+          <Button onClick={handlePrev} className="prevBtn btn">
+            <IoIosArrowBack />
+          </Button>
+          <Button onClick={handleNext} className="nextBtn btn">
+            <IoIosArrowForward />
+          </Button>
+        </div>
+        <div className="index-container">
+          <span>{swiperIndex + 1}</span>
+          <span>{" / "}</span>
+          <span>{getMainSlider.data && getMainSlider.data.length}</span>
+        </div>
+      </div>
     </Swiper>
   );
 };
