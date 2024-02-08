@@ -31,6 +31,7 @@ const MainSlider = () => {
       modules={[Autoplay, Pagination, Navigation]}
       className="mySwiper"
     >
+      {getMainSlider.isLoading && <div>Loading...</div>}
       {getMainSlider.data &&
         getMainSlider.data.map((item: itemTypes) => (
           <SwiperSlide key={item.contentid} className="item-container">
