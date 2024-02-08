@@ -1,3 +1,4 @@
+import MainFestival from "../../components/mainFestival/MainFestival";
 import MainLocal from "../../components/mainLocal/MainLocal";
 import MainSlider from "../../components/mainSlider/MainSlider";
 
@@ -6,6 +7,7 @@ const Main = () => {
     <>
       <MainSlider />
       <MainLocal />
+      <MainFestival />
     </>
   );
 };
