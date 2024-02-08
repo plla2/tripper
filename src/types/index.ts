@@ -14,3 +14,9 @@ export interface HeaderProps {
   setIsLogin: React.Dispatch<React.SetStateAction<boolean>>;
   setLoginType: React.Dispatch<React.SetStateAction<boolean>>;
 }
+
+export interface itemType {
+  contentid: string;
+  firstimage: string;
+  title: string;
+}

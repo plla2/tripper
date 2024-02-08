@@ -4,12 +4,7 @@ import { SyntheticEvent, useEffect, useState } from "react";
 import { Box, Tab, Tabs } from "@mui/material";
 import TabPanel from "../tabpannel/TabPanel";
 import "./mainlocal.scss";
-
-interface itemType {
-  contentid: string;
-  firstimage: string;
-  title: string;
-}
+import { itemType } from "../../types";
 
 const MainLocal = () => {
   const [areaCode, setAreaCode] = useState(1);

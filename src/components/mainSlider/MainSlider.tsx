@@ -10,12 +10,7 @@ import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 import Button from "../common/button/Button";
-
-type itemTypes = {
-  contentid: string;
-  firstimage: string;
-  title: string;
-};
+import { itemType } from "../../types";
 
 const MainSlider = () => {
   const getMainSlider = useQuery({
@@ -51,7 +46,7 @@ const MainSlider = () => {
     >
       {getMainSlider.isLoading && <div>Loading...</div>}
       {getMainSlider.data &&
-        getMainSlider.data.map((item: itemTypes) => (
+        getMainSlider.data.map((item: itemType) => (
           <SwiperSlide key={item.contentid} className="item-container">
             <div className="img-container">
               <img
