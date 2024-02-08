@@ -14,7 +14,7 @@ type itemTypes = {
 };
 
 const MainSlider = () => {
-  const get = useQuery({
+  const getMainSlider = useQuery({
     queryKey: ["mainSliderItem"],
     queryFn: getMainSliderItems,
   });
@@ -31,8 +31,8 @@ const MainSlider = () => {
       modules={[Autoplay, Pagination, Navigation]}
       className="mySwiper"
     >
-      {get.data &&
-        get.data.map((item: itemTypes) => (
+      {getMainSlider.data &&
+        getMainSlider.data.map((item: itemTypes) => (
           <SwiperSlide key={item.contentid} className="item-container">
             <div className="img-container">
               <img
