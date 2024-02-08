@@ -1,4 +1,5 @@
 import React from "react";
+import "./button.scss";
 
 type ButtonTypes = React.DetailedHTMLProps<
   React.ButtonHTMLAttributes<HTMLButtonElement>,

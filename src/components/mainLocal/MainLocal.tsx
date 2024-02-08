@@ -12,7 +12,7 @@ interface itemType {
 }
 
 const MainLocal = () => {
-  const [areaCode, setAreaCode] = useState(39);
+  const [areaCode, setAreaCode] = useState(1);
   const [tabValue, setTabValue] = useState(0);
 
   const getMainLocal = useQuery({
@@ -59,7 +59,7 @@ const MainLocal = () => {
 
   return (
     <div className="mainLocal-wrapper">
-      <p className="mainLocal-header">취향대로 즐기는 국내여행 코스</p>
+      <p className="mainLocal-header">취향대로 즐기는 국내여행 지역별 코스</p>
       <Box
         sx={{
           flexGrow: 1,
