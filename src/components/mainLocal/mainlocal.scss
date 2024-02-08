@@ -1,0 +1,46 @@
+@import "../../styles/theme.scss";
+
+.mainLocal-wrapper {
+  width: 100%;
+  max-width: 1920px;
+  margin: 0 auto;
+  margin-top: 60px;
+  background-color: #f5f9f9;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  .mainLocal-header {
+    font-size: 23px;
+    padding: 20px 0px;
+    margin-top: 30px;
+    letter-spacing: 1px;
+  }
+  .mainLocal-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .img {
+      width: 300px;
+      height: 320px;
+      object-fit: cover;
+      border-radius: 15px;
+    }
+    .text {
+      width: 300px;
+      font-size: 16px;
+      display: flex;
+      justify-content: center;
+      margin-top: 20px;
+    }
+  }
+  .mainLocal-more {
+    text-decoration: underline;
+    font-size: 14px;
+    font-weight: 300;
+    height: fit-content;
+    &:hover {
+      font-weight: 400;
+    }
+  }
+}
