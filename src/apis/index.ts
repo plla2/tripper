@@ -25,3 +25,18 @@ export const getMainLocalItems = async (areaCode: number) => {
     console.log(error);
   }
 };
+
+export const getMainFestivalItems = async () => {
+  try {
+    const res = await axios.get(
+      `${
+        import.meta.env.VITE_API_URL
+      }/searchFestival1?numOfRows=5&pageNo=1&MobileOS=ETC&MobileApp=tripper&_type=json&arrange=R&eventStartDate=20240101&serviceKey=${
+        import.meta.env.VITE_API_KEY
+      } `
+    );
+    return res.data.response.body.items.item;
+  } catch (error) {
+    console.log(error);
+  }
+};
