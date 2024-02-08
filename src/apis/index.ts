@@ -5,9 +5,22 @@ export const getMainSliderItems = async () => {
     const res = await axios.get(
       `${import.meta.env.VITE_API_URL}/searchKeyword1?serviceKey=${
         import.meta.env.VITE_API_KEY
-      }&pageNo=1&numOfRows=30&MobileApp=tripper&MobileOS=ETC&keyword=코스&_type=json&arrange=O&contentTypeId=25`
+      }&pageNo=1&numOfRows=5&MobileApp=tripper&MobileOS=ETC&keyword=코스&_type=json&arrange=O&contentTypeId=25`
     );
-    return res.data.response.body.items.item.slice(0, 5);
+    return res.data.response.body.items.item;
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+export const getMainLocalItems = async (areaCode: number) => {
+  try {
+    const res = await axios.get(
+      `${import.meta.env.VITE_API_URL}/areaBasedList1?serviceKey=${
+        import.meta.env.VITE_API_KEY
+      }&pageNo=1&numOfRows=3&MobileApp=tripper&MobileOS=ETC&_type=json&arrange=Q&contentTypeId=25&areaCode=${areaCode}`
+    );
+    return res.data.response.body.items.item;
   } catch (error) {
     console.log(error);
   }
