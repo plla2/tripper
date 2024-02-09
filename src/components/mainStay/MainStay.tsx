@@ -5,6 +5,7 @@ import "./mainstay.scss";
 
 interface stayItemType extends itemType {
   addr1: string;
+  tel: string;
 }
 
 const MainStay = () => {
@@ -13,9 +14,11 @@ const MainStay = () => {
     queryFn: getMainStayItems,
   });
 
-  let selectedElements = getStayItems.data
-    .slice(0, 1)
-    .concat(getStayItems.data.slice(2, 3), getStayItems.data.slice(3, 4));
+  let selectedElements =
+    getStayItems.data &&
+    getStayItems.data
+      .slice(0, 1)
+      .concat(getStayItems.data.slice(5, 6), getStayItems.data.slice(9, 10));
 
   return (
     <div className="stay-container">
@@ -40,6 +43,7 @@ const MainStay = () => {
                 <div className="text-container">
                   <span className="title">{item.title}</span>
                   <span className="addr">{item.addr1}</span>
+                  <span className="tel">{item.tel}</span>
                 </div>
               </a>
             ))}

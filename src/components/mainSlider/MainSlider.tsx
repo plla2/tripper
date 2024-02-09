@@ -15,8 +15,12 @@ import { itemType } from "../../types";
 const MainSlider = () => {
   const getMainSlider = useQuery({
     queryKey: ["mainSliderItem"],
-    queryFn: () => getMainSliderItems("코스"),
+    queryFn: () => getMainSliderItems("코스", 25, 15, 7, "Q"),
   });
+
+  let selectedElements =
+    getMainSlider.data &&
+    getMainSlider.data.slice(0, 4).concat(getMainSlider.data.slice(5, 8));
 
   const [swiperIndex, setSwiperIndex] = useState(0);
   const [swiper, setSwiper] = useState<SwiperClass>();
@@ -46,7 +50,7 @@ const MainSlider = () => {
     >
       {getMainSlider.isLoading && <div>Loading...</div>}
       {getMainSlider.data &&
-        getMainSlider.data.map((item: itemType) => (
+        selectedElements.map((item: itemType) => (
           <SwiperSlide key={item.contentid} className="item-container">
             <div className="img-container">
               <img
@@ -76,7 +80,7 @@ const MainSlider = () => {
         <div className="index-container">
           <span>{swiperIndex + 1}</span>
           <span>{" / "}</span>
-          <span>{getMainSlider.data && getMainSlider.data.length}</span>
+          <span>{getMainSlider.data && selectedElements.length}</span>
         </div>
       </div>
     </Swiper>
