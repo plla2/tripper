@@ -1,17 +1,25 @@
-import MainFestival from "../../components/mainFestival/MainFestival";
-import MainHealing from "../../components/mainHealing/MainHealing";
+import { Suspense, lazy } from "react";
 import MainLocal from "../../components/mainLocal/MainLocal";
 import MainSlider from "../../components/mainSlider/MainSlider";
-import MainStay from "../../components/mainStay/MainStay";
+
+const LazyMainFestival = lazy(
+  () => import("../../components/mainFestival/MainFestival")
+);
+const LazyMainStay = lazy(() => import("../../components/mainStay/MainStay"));
+const LazyMainHealing = lazy(
+  () => import("../../components/mainHealing/MainHealing")
+);
 
 const Main = () => {
   return (
     <>
       <MainSlider />
       <MainLocal />
-      <MainFestival />
-      <MainStay />
-      <MainHealing />
+      <Suspense fallback={<div>Loading...</div>}>
+        <LazyMainFestival />
+        <LazyMainStay />
+        <LazyMainHealing />
+      </Suspense>
     </>
   );
 };

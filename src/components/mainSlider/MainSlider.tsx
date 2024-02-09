@@ -26,10 +26,18 @@ const MainSlider = () => {
   const [swiper, setSwiper] = useState<SwiperClass>();
 
   const handlePrev = () => {
-    swiper?.slidePrev();
+    if (swiperIndex === 0) {
+      swiper?.slideTo(selectedElements.length - 1);
+    } else {
+      swiper?.slidePrev();
+    }
   };
   const handleNext = () => {
-    swiper?.slideNext();
+    if (swiperIndex === selectedElements.length - 1) {
+      swiper?.slideTo(0);
+    } else {
+      swiper?.slideNext();
+    }
   };
 
   return (
@@ -40,6 +48,7 @@ const MainSlider = () => {
         delay: 4000,
         disableOnInteraction: false,
       }}
+      loop={true}
       navigation={true}
       modules={[Autoplay, Pagination, Navigation]}
       onActiveIndexChange={(e) => setSwiperIndex(e.realIndex)}
