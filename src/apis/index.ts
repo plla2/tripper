@@ -1,11 +1,16 @@
 import axios from "axios";
 
-export const getMainSliderItems = async (keyword: string) => {
+export const getMainSliderItems = async (
+  keyword: string,
+  typeId: number,
+  pageNo: number,
+  numOfRows: number
+) => {
   try {
     const res = await axios.get(
       `${import.meta.env.VITE_API_URL}/searchKeyword1?serviceKey=${
         import.meta.env.VITE_API_KEY
-      }&pageNo=1&numOfRows=5&MobileApp=tripper&MobileOS=ETC&keyword=${keyword}&_type=json&arrange=O&contentTypeId=25`
+      }&pageNo=${pageNo}&numOfRows=${numOfRows}&MobileApp=tripper&MobileOS=ETC&keyword=${keyword}&_type=json&arrange=O&contentTypeId=${typeId}`
     );
     return res.data.response.body.items.item;
   } catch (error) {
