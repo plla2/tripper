@@ -1,11 +1,11 @@
 import axios from "axios";
 
-export const getMainSliderItems = async () => {
+export const getMainSliderItems = async (keyword: string) => {
   try {
     const res = await axios.get(
       `${import.meta.env.VITE_API_URL}/searchKeyword1?serviceKey=${
         import.meta.env.VITE_API_KEY
-      }&pageNo=1&numOfRows=5&MobileApp=tripper&MobileOS=ETC&keyword=코스&_type=json&arrange=O&contentTypeId=25`
+      }&pageNo=1&numOfRows=5&MobileApp=tripper&MobileOS=ETC&keyword=${keyword}&_type=json&arrange=O&contentTypeId=25`
     );
     return res.data.response.body.items.item;
   } catch (error) {
@@ -32,6 +32,21 @@ export const getMainFestivalItems = async () => {
       `${
         import.meta.env.VITE_API_URL
       }/searchFestival1?numOfRows=5&pageNo=1&MobileOS=ETC&MobileApp=tripper&_type=json&arrange=R&eventStartDate=20240101&serviceKey=${
+        import.meta.env.VITE_API_KEY
+      } `
+    );
+    return res.data.response.body.items.item;
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+export const getMainStayItems = async () => {
+  try {
+    const res = await axios.get(
+      `${
+        import.meta.env.VITE_API_URL
+      }/searchStay1?numOfRows=5&pageNo=3&areaCode=1&MobileOS=ETC&MobileApp=tripper&_type=json&arrange=O&sigunguCode=1&serviceKey=${
         import.meta.env.VITE_API_KEY
       } `
     );
