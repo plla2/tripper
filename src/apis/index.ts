@@ -4,13 +4,14 @@ export const getMainSliderItems = async (
   keyword: string,
   typeId: number,
   pageNo: number,
-  numOfRows: number
+  numOfRows: number,
+  arrange: string
 ) => {
   try {
     const res = await axios.get(
       `${import.meta.env.VITE_API_URL}/searchKeyword1?serviceKey=${
         import.meta.env.VITE_API_KEY
-      }&pageNo=${pageNo}&numOfRows=${numOfRows}&MobileApp=tripper&MobileOS=ETC&keyword=${keyword}&_type=json&arrange=O&contentTypeId=${typeId}`
+      }&pageNo=${pageNo}&numOfRows=${numOfRows}&MobileApp=tripper&MobileOS=ETC&keyword=${keyword}&_type=json&arrange=${arrange}&contentTypeId=${typeId}`
     );
     return res.data.response.body.items.item;
   } catch (error) {
@@ -51,7 +52,7 @@ export const getMainStayItems = async () => {
     const res = await axios.get(
       `${
         import.meta.env.VITE_API_URL
-      }/searchStay1?numOfRows=5&pageNo=3&areaCode=1&MobileOS=ETC&MobileApp=tripper&_type=json&arrange=O&sigunguCode=1&serviceKey=${
+      }/searchStay1?numOfRows=10&pageNo=2&areaCode=1&MobileOS=ETC&MobileApp=tripper&_type=json&arrange=O&sigunguCode=1&serviceKey=${
         import.meta.env.VITE_API_KEY
       } `
     );
