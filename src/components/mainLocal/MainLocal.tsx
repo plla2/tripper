@@ -70,6 +70,7 @@ const MainLocal = () => {
           aria-label="Vertical tabs"
           sx={{
             borderRight: 1,
+            marginRight: "30px",
             borderColor: "#609966",
             "& .MuiTabs-indicator": { backgroundColor: "#AAC8A7" },
             "& .MuiTab-root.Mui-selected": {

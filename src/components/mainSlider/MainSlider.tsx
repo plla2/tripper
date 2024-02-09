@@ -15,7 +15,7 @@ import { itemType } from "../../types";
 const MainSlider = () => {
   const getMainSlider = useQuery({
     queryKey: ["mainSliderItem"],
-    queryFn: getMainSliderItems,
+    queryFn: () => getMainSliderItems("코스"),
   });
 
   const [swiperIndex, setSwiperIndex] = useState(0);
