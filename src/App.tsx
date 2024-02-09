@@ -5,6 +5,7 @@ import Login from "./pages/login/Login";
 import Signup from "./pages/signup/Signup";
 import Mypage from "./pages/mypage/Mypage";
 import { useState } from "react";
+import Footer from "./components/footer/Footer";
 
 const App = () => {
   const [isLogin, setIsLogin] = useState(false);
@@ -41,6 +42,7 @@ const App = () => {
         />
         <Route path="/mypage" element={<Mypage />} />
       </Routes>
+      <Footer />
     </BrowserRouter>
   );
 };

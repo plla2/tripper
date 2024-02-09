@@ -1,0 +1,34 @@
+@import "../../styles/theme.scss";
+
+.footer-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+  border-top: 0.5px solid #666;
+  background-color: $input-bg;
+  img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 1px solid $text-accent-color;
+    margin-top: 40px;
+  }
+  .footer-info {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    margin-right: 20px;
+    .footer-item {
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+  .copyright {
+    padding: 15px 0;
+    span {
+      font-size: 14px;
+    }
+  }
+}

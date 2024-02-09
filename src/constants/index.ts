@@ -30,3 +30,21 @@ export const HEADER_LIST = [
     url: "/walking",
   },
 ];
+
+export const FOOTER_LIST = [
+  {
+    id: 0,
+    text: "GITHUB",
+    url: "https://github.com/plla2",
+  },
+  {
+    id: 1,
+    text: "PORTFOLIO",
+    url: "https://plla2.netlify.app/",
+  },
+  {
+    id: 2,
+    text: "BLOG",
+    url: "https://jhbljs92.tistory.com/",
+  },
+];
