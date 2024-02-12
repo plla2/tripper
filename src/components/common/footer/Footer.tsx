@@ -1,5 +1,5 @@
-import footerImg from "../../../public/images/emo.png";
-import { FOOTER_LIST } from "../../constants";
+import footerImg from "/images/emo.png";
+import { FOOTER_LIST } from "../../../constants";
 import "./footer.scss";
 
 const Footer = () => {

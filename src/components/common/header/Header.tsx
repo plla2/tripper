@@ -1,10 +1,10 @@
 import { Link, useNavigate } from "react-router-dom";
-import logoIcon from "../../assets/icons/logoIcon.png";
-import { HEADER_LIST } from "../../constants";
-import Button from "../common/button/Button";
+import logoIcon from "../../../assets/icons/logoIcon.png";
+import { HEADER_LIST } from "../../../constants";
 import { IoSearch } from "@react-icons/all-files/io5/IoSearch";
 import { FaUserCircle } from "@react-icons/all-files/fa/FaUserCircle";
-import { HeaderProps } from "../../types";
+import { HeaderProps } from "../../../types";
+import Button from "../button/Button";
 import "./header.scss";
 
 const Header = ({ isLogin, setIsLogin, setLoginType }: HeaderProps) => {

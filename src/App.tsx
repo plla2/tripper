@@ -1,11 +1,12 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import Header from "./components/header/Header";
+import Header from "./components/common/header/Header";
 import Main from "./pages/main/Main";
 import Login from "./pages/login/Login";
 import Signup from "./pages/signup/Signup";
 import Mypage from "./pages/mypage/Mypage";
 import { useState } from "react";
-import Footer from "./components/footer/Footer";
+import Footer from "./components/common/footer/Footer";
+import Location from "./pages/location/Location";
 
 const App = () => {
   const [isLogin, setIsLogin] = useState(false);
@@ -20,6 +21,7 @@ const App = () => {
       />
       <Routes>
         <Route path="/" element={<Main />} />
+        <Route path="/location" element={<Location />} />
         <Route
           path="/login"
           element={

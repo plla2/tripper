@@ -1,13 +1,15 @@
 import { Suspense, lazy } from "react";
-import MainLocal from "../../components/mainLocal/MainLocal";
-import MainSlider from "../../components/mainSlider/MainSlider";
+import MainLocal from "../../components/main/mainLocal/MainLocal";
+import MainSlider from "../../components/main/mainSlider/MainSlider";
 
 const LazyMainFestival = lazy(
-  () => import("../../components/mainFestival/MainFestival")
+  () => import("../../components/main/mainFestival/MainFestival")
 );
-const LazyMainStay = lazy(() => import("../../components/mainStay/MainStay"));
+const LazyMainStay = lazy(
+  () => import("../../components/main/mainStay/MainStay")
+);
 const LazyMainHealing = lazy(
-  () => import("../../components/mainHealing/MainHealing")
+  () => import("../../components/main/mainHealing/MainHealing")
 );
 
 const Main = () => {

@@ -1,10 +1,10 @@
 import { useQuery } from "@tanstack/react-query";
-import { getMainLocalItems } from "../../apis";
+import { getMainLocalItems } from "../../../apis";
 import { SyntheticEvent, useEffect, useState } from "react";
 import { Box, Tab, Tabs } from "@mui/material";
 import TabPanel from "../tabpannel/TabPanel";
 import "./mainlocal.scss";
-import { itemType } from "../../types";
+import { itemType } from "../../../types";
 
 const MainLocal = () => {
   const [areaCode, setAreaCode] = useState(1);

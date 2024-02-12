@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useQuery } from "@tanstack/react-query";
-import { getMainSliderItems } from "../../apis";
+import { getMainSliderItems } from "../../../apis";
 import { Swiper, SwiperClass, SwiperSlide } from "swiper/react";
 import { Autoplay, Pagination, Navigation } from "swiper/modules";
 import { IoIosArrowBack } from "@react-icons/all-files/io/IoIosArrowBack";
@@ -9,8 +9,8 @@ import "./mainslider.scss";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
-import Button from "../common/button/Button";
-import { itemType } from "../../types";
+import Button from "../../common/button/Button";
+import { itemType } from "../../../types";
 
 const MainSlider = () => {
   const getMainSlider = useQuery({

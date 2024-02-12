@@ -1,6 +1,6 @@
 import { useQuery } from "@tanstack/react-query";
-import { getMainSliderItems } from "../../apis";
-import { itemType } from "../../types";
+import { getMainSliderItems } from "../../../apis";
+import { itemType } from "../../../types";
 import "./mainhealing.scss";
 
 const MainHealing = () => {

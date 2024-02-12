@@ -1,6 +1,6 @@
 import { useQuery } from "@tanstack/react-query";
-import { getMainFestivalItems } from "../../apis";
-import { itemType } from "../../types";
+import { getMainFestivalItems } from "../../../apis";
+import { itemType } from "../../../types";
 import "./mainfestival.scss";
 import { useState } from "react";
 

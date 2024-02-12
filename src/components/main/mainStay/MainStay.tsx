@@ -1,6 +1,6 @@
 import { useQuery } from "@tanstack/react-query";
-import { getMainStayItems } from "../../apis";
-import { itemType } from "../../types";
+import { getMainStayItems } from "../../../apis";
+import { itemType } from "../../../types";
 import "./mainstay.scss";
 
 interface stayItemType extends itemType {
