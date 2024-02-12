@@ -48,7 +48,6 @@ const MainSlider = () => {
         delay: 4000,
         disableOnInteraction: false,
       }}
-      loop={true}
       navigation={true}
       modules={[Autoplay, Pagination, Navigation]}
       onActiveIndexChange={(e) => setSwiperIndex(e.realIndex)}
