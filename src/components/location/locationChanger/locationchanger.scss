@@ -24,7 +24,10 @@
     span {
       font-size: 15px;
     }
-
+    .active {
+      color: $point-color;
+      font-size: 17px;
+    }
     .swiper-button-prev {
       background-color: $point-color;
       height: 30px;

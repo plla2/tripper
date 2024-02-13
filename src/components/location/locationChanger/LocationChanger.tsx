@@ -10,6 +10,7 @@ import "./locationchanger.scss";
 
 interface PropType {
   setCurrentLocation: React.Dispatch<SetStateAction<number>>;
+  currentLocation: number;
 }
 type itemType = {
   id: number;
@@ -18,7 +19,7 @@ type itemType = {
   img: string;
 };
 
-const LocationChanger = ({ setCurrentLocation }: PropType) => {
+const LocationChanger = ({ currentLocation, setCurrentLocation }: PropType) => {
   const handleChange = (codeNum: number) => {
     setCurrentLocation(codeNum);
   };
@@ -49,7 +50,13 @@ const LocationChanger = ({ setCurrentLocation }: PropType) => {
                 src={item.img}
                 alt="아이템 아이콘"
               />
-              <span>{item.name}</span>
+              <span
+                className={`${
+                  Number(item.code) === currentLocation ? "active" : ""
+                }`}
+              >
+                {item.name}
+              </span>
             </Button>
           </SwiperSlide>
         ))}

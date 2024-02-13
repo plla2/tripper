@@ -6,7 +6,10 @@ const Location = () => {
   console.log(currentLocation);
   return (
     <>
-      <LocationChanger setCurrentLocation={setCurrentLocation} />
+      <LocationChanger
+        currentLocation={currentLocation}
+        setCurrentLocation={setCurrentLocation}
+      />
     </>
   );
 };
