@@ -32,7 +32,7 @@ const LocationChanger = ({ setCurrentLocation }: PropType) => {
       <Swiper
         spaceBetween={30}
         centeredSlides={false}
-        slidesPerView={10}
+        slidesPerView={11}
         scrollbar={{ draggable: true }}
         navigation={true}
         className="locationSwiper"
