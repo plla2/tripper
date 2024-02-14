@@ -1,15 +1,16 @@
 import { useState } from "react";
 import LocationChanger from "../../components/location/locationChanger/LocationChanger";
+import LocationCard from "../../components/location/locationCard/LocationCard";
 
 const Location = () => {
   const [currentLocation, setCurrentLocation] = useState(1);
-  console.log(currentLocation);
   return (
     <>
       <LocationChanger
         currentLocation={currentLocation}
         setCurrentLocation={setCurrentLocation}
       />
+      <LocationCard currentLocation={currentLocation} />
     </>
   );
 };
