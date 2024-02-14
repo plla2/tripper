@@ -61,3 +61,18 @@ export const getMainStayItems = async () => {
     console.log(error);
   }
 };
+
+export const getDetailItem = async (contentId: string) => {
+  try {
+    const res = await axios.get(
+      `${
+        import.meta.env.VITE_API_URL
+      }/detailCommon1?MobileOS=ETC&MobileApp=tripper&_type=json&contentId=${contentId}&contentTypeId=25&defaultYN=Y&overviewYN=Y&firstImageYN=Y&serviceKey=${
+        import.meta.env.VITE_API_KEY
+      } `
+    );
+    return res.data.response.body.items.item;
+  } catch (error) {
+    console.log(error);
+  }
+};
