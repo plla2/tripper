@@ -12,7 +12,6 @@ import gyeonggiIcon from "../assets/localIcons/gyeonggi.webp";
 import incheonIcon from "../assets/localIcons/incheon.webp";
 import jejuIcon from "../assets/localIcons/jeju.webp";
 import kangwonIcon from "../assets/localIcons/kangwon.webp";
-import sejongIcon from "../assets/localIcons/sejong.webp";
 import seoulIcon from "../assets/localIcons/seoul.webp";
 import ulsanIcon from "../assets/localIcons/ulsan.webp";
 
@@ -109,12 +108,6 @@ export const LOCATION_CODE = [
     name: "울산",
     code: "7",
     img: ulsanIcon,
-  },
-  {
-    id: 7,
-    name: "세종",
-    code: "8",
-    img: sejongIcon,
   },
   {
     id: 8,
