@@ -48,7 +48,7 @@ const Header = ({ isLogin, setIsLogin, setLoginType }: HeaderProps) => {
           className="search-input"
         />
         <span className="underline"></span>
-        <Button onClick={() => console.log("검색!")} className="searchBtn">
+        <Button className="searchBtn">
           <IoSearch />
         </Button>
       </div>

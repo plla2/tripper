@@ -98,7 +98,7 @@ const MainLocal = () => {
               </div>
             </TabPanel>
           ))}
-        <a href="#" className="mainLocal-more">
+        <a href="/location" className="mainLocal-more">
           더보기
         </a>
       </Box>
