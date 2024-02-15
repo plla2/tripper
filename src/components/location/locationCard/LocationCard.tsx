@@ -13,7 +13,7 @@ type itemType = {
 const LocationCard = ({ currentLocation }: PropsType) => {
   const getLocalItems = useQuery({
     queryKey: ["locationItems", currentLocation],
-    queryFn: () => getMainLocalItems(currentLocation),
+    queryFn: () => getMainLocalItems(currentLocation, 25),
   });
 
   return (

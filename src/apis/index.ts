@@ -19,12 +19,15 @@ export const getMainSliderItems = async (
   }
 };
 
-export const getMainLocalItems = async (areaCode: number) => {
+export const getMainLocalItems = async (
+  areaCode: number,
+  contentTypeId: number
+) => {
   try {
     const res = await axios.get(
       `${import.meta.env.VITE_API_URL}/areaBasedList1?serviceKey=${
         import.meta.env.VITE_API_KEY
-      }&pageNo=1&numOfRows=3&MobileApp=tripper&MobileOS=ETC&_type=json&arrange=Q&contentTypeId=25&areaCode=${areaCode}`
+      }&pageNo=1&numOfRows=3&MobileApp=tripper&MobileOS=ETC&_type=json&arrange=Q&contentTypeId=${contentTypeId}&areaCode=${areaCode}`
     );
     return res.data.response.body.items.item;
   } catch (error) {
@@ -76,3 +79,5 @@ export const getDetailItem = async (contentId: string) => {
     console.log(error);
   }
 };
+
+// export const get;
