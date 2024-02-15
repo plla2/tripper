@@ -12,7 +12,7 @@ const MainLocal = () => {
 
   const getMainLocal = useQuery({
     queryKey: ["mainLocal", areaCode],
-    queryFn: () => getMainLocalItems(areaCode, 25),
+    queryFn: () => getMainLocalItems(areaCode, 25, 3),
   });
 
   useEffect(() => {
