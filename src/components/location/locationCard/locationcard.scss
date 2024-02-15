@@ -12,6 +12,10 @@
       position: relative;
       .detailCard-content {
         height: 200px;
+        &:hover {
+          transform: scale(1.05);
+          transition: all 0.6s ease;
+        }
         .detailCard-header {
           background-color: $point-color;
           width: fit-content;
