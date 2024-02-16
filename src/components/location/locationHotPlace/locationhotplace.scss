@@ -1,0 +1,52 @@
+@import "../../../styles/theme.scss";
+
+.hotPlace-container {
+  width: 1200px;
+  margin: 0 auto;
+  h1 {
+    font-size: 25px;
+    font-weight: bold;
+    margin-bottom: 50px;
+  }
+  .group-container {
+    .header-container {
+      font-size: 20px;
+      margin-bottom: 35px;
+      .headerFront {
+        font-weight: bold;
+      }
+    }
+    .cards {
+      display: flex;
+      gap: 12px;
+      .card-container {
+        display: flex;
+        flex-direction: column;
+        height: 260px;
+        padding: 5px;
+        border-radius: 8px;
+        box-shadow: 5px 8px 5px 1px rgba(0, 0, 0, 0.1);
+        background-color: $main-local-wrapper-bg;
+        .image-container {
+          img {
+            width: 280px;
+            border-radius: 8px;
+            height: 185px;
+          }
+        }
+        .content-container {
+          display: flex;
+          flex-direction: column;
+          gap: 8px;
+          padding-left: 10px;
+          .title {
+            font-weight: bold;
+          }
+          .address {
+            font-size: 14px;
+          }
+        }
+      }
+    }
+  }
+}
