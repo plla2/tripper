@@ -11,7 +11,7 @@ interface FestivalItemType extends itemType {
 const MainFestival = () => {
   const getMainFestival = useQuery({
     queryKey: ["mainFestival"],
-    queryFn: getMainFestivalItems,
+    queryFn: () => getMainFestivalItems(20240201, 5, 1),
   });
 
   const [activeItem, setActiveItem] = useState(0);
