@@ -36,12 +36,16 @@ export const getMainLocalItems = async (
   }
 };
 
-export const getMainFestivalItems = async () => {
+export const getMainFestivalItems = async (
+  startDate: number,
+  numOfRows: number,
+  areaCode: number
+) => {
   try {
     const res = await axios.get(
       `${
         import.meta.env.VITE_API_URL
-      }/searchFestival1?numOfRows=5&pageNo=1&MobileOS=ETC&MobileApp=tripper&_type=json&arrange=R&eventStartDate=20240101&serviceKey=${
+      }/searchFestival1?numOfRows=${numOfRows}&pageNo=1&MobileOS=ETC&MobileApp=tripper&_type=json&arrange=R&areaCode=${areaCode}&eventStartDate=${startDate}&serviceKey=${
         import.meta.env.VITE_API_KEY
       } `
     );
