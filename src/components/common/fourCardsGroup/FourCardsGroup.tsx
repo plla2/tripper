@@ -10,9 +10,9 @@ const FourCardsGroup = ({ data, header, headerTitle }: LocalItemsType) => {
       </div>
       <div className="cards">
         {data.map((item) => (
-          <>
+          <div key={item.contentid}>
             <Card item={item} />
-          </>
+          </div>
         ))}
       </div>
     </div>
