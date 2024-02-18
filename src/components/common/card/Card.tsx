@@ -13,6 +13,10 @@ const Card = ({ item }: ItemProps) => {
       <div className="content-container">
         <span className="title">{item.title}</span>
         <span className="address">{item.addr1}</span>
+        <div>
+          <span className="startDate">{item.eventstartdate}</span>
+          <span className="endDate">{item.eventenddate}</span>
+        </div>
       </div>
     </div>
   );
