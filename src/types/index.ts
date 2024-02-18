@@ -36,6 +36,8 @@ export interface LocalItemsType {
     createdtime: string;
     firstimage: string;
     firstimage2: string;
+    eventstartdate?: string;
+    eventenddate?: string;
     mapx: string;
     mapy: string;
     mlevel: string;
@@ -45,6 +47,6 @@ export interface LocalItemsType {
     title: string;
     zipcode: string;
   }[];
-  header: string;
-  headerTitle: string;
+  header?: string;
+  headerTitle?: string;
 }
