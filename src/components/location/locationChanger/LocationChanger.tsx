@@ -45,11 +45,13 @@ const LocationChanger = ({ currentLocation, setCurrentLocation }: PropType) => {
               className="changer-btn"
               onClick={() => handleChange(Number(item.code))}
             >
-              <img
-                className="location-icon"
-                src={item.img}
-                alt="아이템 아이콘"
-              />
+              <div className="icon-container">
+                <img
+                  className="location-icon"
+                  src={item.img}
+                  alt="아이템 아이콘"
+                />
+              </div>
               <span
                 className={`${
                   Number(item.code) === currentLocation ? "active" : ""
