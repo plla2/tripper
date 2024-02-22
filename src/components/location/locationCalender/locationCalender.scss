@@ -1,0 +1,116 @@
+@import "../../../styles/theme.scss";
+
+.calender-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  .calender-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    .header-local {
+      font-size: 22px;
+      font-weight: bold;
+      margin-right: 5px;
+      color: $point-color;
+    }
+    .header-content {
+      font-size: 19px;
+    }
+    a {
+      font-size: 14px;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+  .picker-container {
+    display: flex;
+    align-items: center;
+    span {
+      margin-right: 10px;
+    }
+  }
+}
+.fiveGroup-container {
+  display: flex;
+  width: 1200px;
+  margin: 0 auto;
+  margin-top: 40px;
+  gap: 10px;
+  margin-bottom: 40px;
+  .fivecards-wrapper {
+    display: flex;
+    width: 100%;
+    .hoverCard-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      flex-wrap: wrap;
+      align-content: center;
+      height: 300px;
+      position: relative;
+      &:hover .showContent-container {
+        opacity: 1;
+        transition: opacity 0.4s ease-in-out;
+      }
+      &:hover img {
+        transform: scale(1.1);
+        transform-origin: center;
+        filter: brightness(30%);
+        transition: transform 0.4s ease-in-out, filter 0.4s ease-in-out;
+      }
+      .image-container {
+        display: inline-block;
+        box-shadow: 1px 4px 8px rgba(0, 0, 0, 0.4);
+        border-radius: 10px;
+        overflow: hidden;
+        width: 220px;
+        height: 300px;
+        img {
+          width: 100%;
+          height: 100%;
+          transition: transform 0.4s ease-in-out, filter 0.4s ease-in-out;
+        }
+      }
+      .showContent-container {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        opacity: 0;
+        transition: opacity 0.4s ease-in-out;
+        width: 180px;
+        display: flex;
+        flex-direction: column;
+        p {
+          color: white;
+        }
+        .title {
+          font-size: 18px;
+          font-weight: bold;
+          margin-bottom: 30px;
+          overflow: hidden;
+          white-space: nowrap;
+          text-overflow: ellipsis;
+          word-break: break-all;
+        }
+        .address {
+          font-size: 14px;
+          margin-bottom: 15px;
+        }
+        .showContent-date {
+          display: flex;
+          gap: 4px;
+          position: absolute;
+          transform: translate(-50%, -50%);
+          bottom: -80%;
+          left: 60%;
+          p {
+            font-size: 12px;
+          }
+        }
+      }
+    }
+  }
+}
