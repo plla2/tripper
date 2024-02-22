@@ -1,16 +1,16 @@
 import { LocalItemsType } from "../../../types";
-import Card from "../card/Card";
+import HoverCard from "./HoverCard";
 
 const FiveCardsGroup = ({ data }: LocalItemsType) => {
   return (
-    <div>
+    <>
       {data &&
         data.map((item) => (
-          <div>
-            <Card item={item} />
+          <div className="fivecards-wrapper" key={item.contentid}>
+            <HoverCard item={item} />
           </div>
         ))}
-    </div>
+    </>
   );
 };
 

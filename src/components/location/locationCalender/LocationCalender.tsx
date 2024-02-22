@@ -30,21 +30,29 @@ const LocationCalender = ({ currentLocation }: PropsType) => {
     <>
       <div className="calender-container">
         <div className="calender-header">
-          <span className="header-local">{`${locationName?.name}`}</span>
-          <span className="header-content">
-            {" "}
-            의 이런 축제, 행사는 어떠신가요?
-          </span>
+          <div>
+            <span className="header-local">{`${locationName?.name}`}</span>
+            <span className="header-content">
+              의 이런 축제, 행사는 어떠신가요?
+            </span>
+          </div>
+          <div>
+            <a href="#">더보기</a>
+          </div>
         </div>
-        <DatePicker
-          showIcon
-          toggleCalendarOnIconClick
-          selected={selectedDate}
-          onChange={(date) => setSelectedDate(date)}
-          locale={ko}
-        />
+        <div className="picker-container">
+          <span>날짜를 선택해주세요.</span>
+          <DatePicker
+            showIcon
+            toggleCalendarOnIconClick
+            selected={selectedDate}
+            onChange={(date) => setSelectedDate(date)}
+            locale={ko}
+            className="calender"
+          />
+        </div>
       </div>
-      <div className="group-container">
+      <div className="fiveGroup-container">
         <FiveCardsGroup data={getLocalFestival?.data} />
       </div>
     </>
