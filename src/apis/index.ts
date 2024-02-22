@@ -45,7 +45,7 @@ export const getMainFestivalItems = async (
     const res = await axios.get(
       `${
         import.meta.env.VITE_API_URL
-      }/searchFestival1?numOfRows=${numOfRows}&pageNo=1&MobileOS=ETC&MobileApp=tripper&_type=json&arrange=R&areaCode=${areaCode}&eventStartDate=${startDate}&serviceKey=${
+      }/searchFestival1?numOfRows=${numOfRows}&pageNo=1&MobileOS=ETC&MobileApp=tripper&_type=json&areaCode=${areaCode}&eventStartDate=${startDate}&serviceKey=${
         import.meta.env.VITE_API_KEY
       } `
     );
