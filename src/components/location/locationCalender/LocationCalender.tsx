@@ -8,6 +8,7 @@ import { LOCATION_CODE } from "../../../constants";
 import FiveCardsGroup from "../../common/fiveCardsGroup/FiveCardsGroup";
 import "react-datepicker/dist/react-datepicker.css";
 import "./locationCalender.scss";
+import NoContent from "../../common/noContent/NoContent";
 
 type PropsType = {
   currentLocation: number;
@@ -52,9 +53,13 @@ const LocationCalender = ({ currentLocation }: PropsType) => {
           />
         </div>
       </div>
-      <div className="fiveGroup-container">
-        <FiveCardsGroup data={getLocalFestival?.data} />
-      </div>
+      {getLocalFestival?.data ? (
+        <div className="fiveGroup-container">
+          <FiveCardsGroup data={getLocalFestival?.data} />
+        </div>
+      ) : (
+        <NoContent title="지역이나 날짜" />
+      )}
     </>
   );
 };

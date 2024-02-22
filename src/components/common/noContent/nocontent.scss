@@ -1,0 +1,12 @@
+.noContents-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  img {
+    margin-top: 40px;
+  }
+  span {
+    margin-top: 10px;
+    font-size: 18px;
+  }
+}
