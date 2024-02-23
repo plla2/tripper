@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { SubmitHandler, useForm } from "react-hook-form";
 import logoIcon from "../../assets/icons/logoIcon.png";
 import { useNavigate } from "react-router-dom";
@@ -9,6 +10,7 @@ const AuthForm = ({ setIsLogin, loginType, setLoginType }: FormProps) => {
   const {
     register,
     handleSubmit,
+    setFocus,
     formState: { errors },
   } = useForm<FormData>();
   const navigate = useNavigate();
@@ -36,6 +38,11 @@ const AuthForm = ({ setIsLogin, loginType, setLoginType }: FormProps) => {
   const submitForm: SubmitHandler<FormData> = (data) => {
     data.id === "test123" && data.password === "12345" ? successFn() : failFn();
   };
+
+  useEffect(() => {
+    setFocus("id");
+  }, [setFocus]);
+
   return (
     <div className="login-container">
       <div className="wrapper">
