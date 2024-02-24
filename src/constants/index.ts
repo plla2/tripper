@@ -14,6 +14,20 @@ import jejuIcon from "../assets/localIcons/jeju.webp";
 import kangwonIcon from "../assets/localIcons/kangwon.webp";
 import seoulIcon from "../assets/localIcons/seoul.webp";
 import ulsanIcon from "../assets/localIcons/ulsan.webp";
+import cafe from "/images/themeSliderImg/cafe.jpg";
+import winter from "/images/themeSliderImg/winter.jpg";
+import camping from "/images/themeSliderImg/camping.jpg";
+import child from "/images/themeSliderImg/child.jpg";
+import culture from "/images/themeSliderImg/culture.jpg";
+import healing from "/images/themeSliderImg/healing.jpg";
+import history from "/images/themeSliderImg/history.jpg";
+import hotplace from "/images/themeSliderImg/hotplace.jpg";
+import korea from "/images/themeSliderImg/korea.jpg";
+import nature from "/images/themeSliderImg/nature.jpg";
+import night from "/images/themeSliderImg/night.jpg";
+import shopping from "/images/themeSliderImg/shopping.jpg";
+import walk from "/images/themeSliderImg/walk.png";
+import special from "/images/themeSliderImg/special.jpg";
 
 export const HEADER_LIST = [
   {
@@ -162,5 +176,78 @@ export const LOCATION_CODE = [
     name: "제주",
     code: "39",
     img: jejuIcon,
+  },
+];
+
+export const THEME_ITEMS = [
+  {
+    title: "캠핑",
+    content: "자연 속에서 캠프파이어를 즐기며 자유로운 분위기를 만들어보세요.",
+    img: camping,
+  },
+  {
+    title: "역사",
+    content: "과거의 흔적을 따라가는 여행, 역사의 숨결을 느껴보세요.",
+    img: history,
+  },
+  {
+    title: "한옥",
+    content: "전통 가옥에서 편안한 시간을 보내며 한국의 아름다움을 느껴보세요.",
+    img: korea,
+  },
+  {
+    title: "명소",
+    content: "아름다운 관광지를 탐험하며 특별한 순간을 만들어보세요.",
+    img: hotplace,
+  },
+  {
+    title: "문화",
+    content: "다채로운 문화 체험을 통해 새로운 시각을 얻어보세요.",
+    img: culture,
+  },
+  {
+    title: "생태",
+    content: "자연의 조화로움을 느끼며 생태계의 아름다움을 발견해보세요.",
+    img: nature,
+  },
+  {
+    title: "아이",
+    content: "가족 모두가 함께 즐길 수 있는 즐거운 여행을 경험해보세요.",
+    img: child,
+  },
+  {
+    title: "산책",
+    content: "아름다운 풍경을 배경으로 여유로운 산책을 즐겨보세요.",
+    img: walk,
+  },
+  {
+    title: "치유",
+    content: "마음을 치유하는 여행으로 일상의 스트레스를 잊어보세요.",
+    img: healing,
+  },
+  {
+    title: "이색",
+    content: "독특하고 특별한 경험을 만나보며 색다른 여행을 즐겨보세요.",
+    img: special,
+  },
+  {
+    title: "쇼핑",
+    content: "다양한 상품들을 살펴보며 특별한 선물을 찾아보세요.",
+    img: shopping,
+  },
+  {
+    title: "야경",
+    content: "환상적인 야경을 감상하며 로맨틱한 순간을 만들어보세요.",
+    img: night,
+  },
+  {
+    title: "카페",
+    content: "분위기 있는 카페에서 휴식을 취하며 여행의 피로를 푸세요.",
+    img: cafe,
+  },
+  {
+    title: "겨울",
+    content: "설경 속에서 겨울 특유의 아름다움을 만끽해보세요.",
+    img: winter,
   },
 ];
