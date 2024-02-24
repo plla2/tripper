@@ -19,6 +19,9 @@ export interface itemType {
   contentid: string;
   firstimage: string;
   title: string;
+  mapx?: string;
+  mapy?: string;
+  mlevel?: string;
 }
 
 export interface LocalItemsType {
