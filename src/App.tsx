@@ -7,6 +7,8 @@ import Mypage from "./pages/mypage/Mypage";
 import { useState } from "react";
 import Footer from "./components/common/footer/Footer";
 import Location from "./pages/location/Location";
+import Theme from "./pages/theme/Theme";
+import Map from "./pages/map/Map";
 
 const App = () => {
   const [isLogin, setIsLogin] = useState(false);
@@ -22,6 +24,8 @@ const App = () => {
       <Routes>
         <Route path="/" element={<Main />} />
         <Route path="/location" element={<Location />} />
+        <Route path="/theme" element={<Theme />} />
+        <Route path="/map" element={<Map />} />
         <Route
           path="/login"
           element={
