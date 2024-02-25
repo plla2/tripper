@@ -2,7 +2,7 @@
 
 .theme-body {
   max-width: 1920px;
-  background-color: #98abee;
+  background-color: $theme-slider-bg;
 
   .theme-showcase {
     max-width: 1200px;
@@ -24,9 +24,8 @@
         z-index: 1;
 
         h1 {
-          margin: 0 0 45px;
-          font-size: 1.7rem;
-          line-height: 35px;
+          font-size: 1.9rem;
+          line-height: 40px;
           font-weight: bold;
           .theme-thin {
             font-weight: 500;
@@ -39,10 +38,18 @@
         top: 300px;
         left: 50%;
         margin: 0 0 0 -500px;
-        width: 940px;
+        border: 1px solid $white;
+        border-radius: 4px;
         .theme-all-btn {
-          font-size: 18px;
-          color: #333;
+          padding: 10px 0;
+          width: 140px;
+          font-size: 14px;
+          color: $white;
+          border-radius: 4px;
+          &:hover {
+            background-color: $white;
+            color: $text-color;
+          }
         }
       }
       .theme-swiper-container {
@@ -66,7 +73,7 @@
           }
 
           & .swiper-pagination-bullet {
-            background-color: #7f27ff;
+            background-color: $pagination-color;
             width: 22px;
             height: 4px;
             border-radius: 0;
@@ -77,12 +84,46 @@
             }
           }
         }
-        // .swiper-button-prev {
-        //   display: none;
-        // }
-        // .swiper-button-next {
-        //   display: none;
-        // }
+        .swiper-button-prev {
+          position: absolute;
+          top: 840px;
+          left: 350px;
+          cursor: pointer;
+          z-index: 9999;
+          color: $pagination-color;
+          background-color: $white;
+          border-radius: 50%;
+          width: 25px;
+          height: 25px;
+          padding: 3px;
+          &:hover {
+            background-color: $pagination-color;
+            color: $white;
+          }
+          &::after {
+            font-size: 16px;
+          }
+        }
+        .swiper-button-next {
+          position: absolute;
+          top: 840px;
+          left: 820px;
+          cursor: pointer;
+          z-index: 9999;
+          color: $pagination-color;
+          background-color: $white;
+          border-radius: 50%;
+          width: 25px;
+          height: 25px;
+          padding: 3px;
+          &:hover {
+            background-color: $pagination-color;
+            color: $white;
+          }
+          &::after {
+            font-size: 16px;
+          }
+        }
         .swiper-wrapper {
           margin-left: 120px;
           position: relative;
@@ -104,7 +145,7 @@
               left: 0;
               bottom: 0;
               transition: all 0.5s;
-              border-radius: 500px 500px 5px 5px;
+              border-radius: 100px 100px 5px 5px;
               overflow: hidden;
               .theme-item-img {
                 display: block;
@@ -129,7 +170,7 @@
                 left: 0;
                 right: 0;
                 bottom: 30px;
-                color: white;
+                color: $white;
                 text-align: center;
                 z-index: 5;
                 .theme-item-title {
@@ -143,12 +184,12 @@
                   background-color: rgba(0, 0, 0, 0.5);
                   padding: 5px 10px;
                   border-radius: 8px;
-                  color: white;
+                  color: $white;
                 }
                 p {
                   display: none;
                   line-height: 23px;
-                  color: grey;
+                  color: $text-color;
                   max-height: 45px;
                   overflow: hidden;
                   word-break: keep-all;
@@ -165,7 +206,7 @@
                 height: 590px !important;
                 width: 380px;
                 padding: 20px;
-                background-color: white;
+                background-color: $white;
                 overflow: hidden;
                 box-shadow: 3px 4px 40px -20px rgba(34, 34, 34, 0.25);
                 .theme-item-img {
@@ -175,7 +216,7 @@
                   img {
                     width: 100%;
                     height: 440px;
-                    border-radius: 500px 500px 0 0;
+                    border-radius: 85px 85px 0 0;
                     vertical-align: middle;
                     transform: scale3d(1, 1, 1);
                     transition: all 0.8s;
@@ -183,15 +224,16 @@
                 }
                 .theme-item-text {
                   position: static;
-                  color: #333;
+                  color: $text-color;
                   padding: 27px 10px 0;
                   text-align: center;
+                  margin-top: 10px;
+                  height: 100px;
                   .theme-item-title {
                     max-width: 100%;
                     font-size: 23px;
                     font-weight: bold;
-                    color: #333;
-                    line-height: 25px;
+                    color: $text-color;
                     position: relative;
                     text-overflow: ellipsis;
                     white-space: nowrap;
@@ -200,7 +242,7 @@
                   }
                   p {
                     display: -webkit-box;
-                    margin-top: 30px;
+                    margin-top: 15px;
                     font-size: 17px;
                     letter-spacing: 1px;
                   }
