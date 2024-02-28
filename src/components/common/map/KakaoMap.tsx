@@ -12,10 +12,8 @@ const KakaoMap = ({ data }: LocalItemsType) => {
           id="map"
           center={{ lat: 36.034, lng: 128.0134 }}
           style={{
-            width: "60%",
+            width: "70%",
             height: "450px",
-            display: "flex",
-            justifyContent: "center",
           }}
           level={13}
         >
