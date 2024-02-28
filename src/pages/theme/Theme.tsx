@@ -1,11 +1,14 @@
-import { useState } from "react";
+import { Suspense, lazy, useState } from "react";
 import ThemeChanger from "../../components/theme/themeChanger/ThemeChanger";
 import ThemeSlider from "../../components/theme/themeSlider/ThemeSlider";
 import { useQuery } from "@tanstack/react-query";
 import { getMainSliderItems } from "../../apis";
 import ThemeCards from "../../components/theme/themeCards/ThemeCards";
-import ThemeMap from "../../components/theme/themeMap/ThemeMap";
 import "./themePage.scss";
+
+const LazyThemeMap = lazy(
+  () => import("../../components/theme/themeMap/ThemeMap")
+);
 
 const Theme = () => {
   const [keyword, setKeyword] = useState<string>("캠핑");
@@ -19,7 +22,7 @@ const Theme = () => {
   return (
     <>
       {themeQuery.data && (
-        <div>
+        <>
           <ThemeSlider />
           <ThemeChanger
             keyword={keyword}
@@ -27,11 +30,13 @@ const Theme = () => {
             typeId={typeId}
             setTypeId={setTypeId}
           />
-          <div className="theme-map-cards-container">
-            <ThemeMap data={themeQuery.data} />
-            <ThemeCards />
-          </div>
-        </div>
+          <Suspense fallback={<div>Loading...</div>}>
+            <div className="theme-map-cards-container">
+              <LazyThemeMap data={themeQuery.data} />
+              <ThemeCards />
+            </div>
+          </Suspense>
+        </>
       )}
     </>
   );
