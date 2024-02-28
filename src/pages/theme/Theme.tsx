@@ -5,7 +5,7 @@ import { useQuery } from "@tanstack/react-query";
 import { getMainSliderItems } from "../../apis";
 import ThemeCards from "../../components/theme/themeCards/ThemeCards";
 import ThemeMap from "../../components/theme/themeMap/ThemeMap";
-import "./theme.scss";
+import "./themePage.scss";
 
 const Theme = () => {
   const [keyword, setKeyword] = useState<string>("캠핑");
@@ -13,25 +13,27 @@ const Theme = () => {
 
   const themeQuery = useQuery({
     queryKey: ["themeItems", keyword, typeId],
-    queryFn: () => getMainSliderItems(keyword, typeId, 1, 5, "Q"),
+    queryFn: () => getMainSliderItems(keyword, typeId, 1, 20, "Q"),
   });
-  console.log(keyword, typeId);
-  console.log(themeQuery.data && themeQuery.data);
 
   return (
-    <div>
-      <ThemeSlider />
-      <ThemeChanger
-        keyword={keyword}
-        setKeyword={setKeyword}
-        typeId={typeId}
-        setTypeId={setTypeId}
-      />
-      <div className="theme-map-cards-container">
-        <ThemeMap />
-        <ThemeCards />
-      </div>
-    </div>
+    <>
+      {themeQuery.data && (
+        <div>
+          <ThemeSlider />
+          <ThemeChanger
+            keyword={keyword}
+            setKeyword={setKeyword}
+            typeId={typeId}
+            setTypeId={setTypeId}
+          />
+          <div className="theme-map-cards-container">
+            <ThemeMap data={themeQuery.data} />
+            <ThemeCards />
+          </div>
+        </div>
+      )}
+    </>
   );
 };
 export default Theme;
