@@ -1,8 +1,8 @@
 import { MapMarker } from "react-kakao-maps-sdk";
-import { LocalItemsType } from "../../../types";
+import { MapMarkerItemType } from "../../../types";
 import { useState } from "react";
 
-const MapEventMarker = ({ data }: { data: LocalItemsType["data"][number] }) => {
+const MapEventMarker = ({ data }: MapMarkerItemType) => {
   const [isVisible, setIsVisible] = useState(false);
 
   return (
