@@ -33,7 +33,7 @@ const Theme = () => {
           <Suspense fallback={<div>Loading...</div>}>
             <div className="theme-map-cards-container">
               <LazyThemeMap data={themeQuery.data} />
-              <ThemeCards />
+              <ThemeCards data={themeQuery.data} />
             </div>
           </Suspense>
         </>
