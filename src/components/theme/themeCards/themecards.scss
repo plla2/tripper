@@ -1,0 +1,54 @@
+@import "../../../styles/theme.scss";
+
+.themecard-container {
+  max-width: 1200px;
+  margin-top: 50px;
+  .themecard-items-wrapper {
+    justify-content: space-around;
+    display: flex;
+    max-width: 1200px;
+    flex-wrap: wrap;
+    .themecard-item {
+      width: 43%;
+      height: 250px;
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+      justify-content: flex-start;
+      border-radius: 10px;
+      box-shadow: 4px 3px 30px -4px rgba(0, 0, 0, 0.3);
+      margin-bottom: 40px;
+      img {
+        width: 100%;
+        height: 200px;
+        object-fit: fill;
+        border-radius: 10px;
+        margin-bottom: 10px;
+      }
+      span {
+        font-size: 18px;
+        font-weight: bold;
+      }
+    }
+  }
+  .themecard-btn {
+    .themecard-more {
+      width: 80px;
+      padding: 5px;
+      border-radius: 3px;
+      background-color: $point-color;
+      color: $white;
+      &:hover {
+        opacity: 0.8;
+      }
+    }
+    .themecard-no-more {
+      width: 80px;
+      padding: 5px;
+      border-radius: 3px;
+      background-color: $invalid-bg;
+      cursor: default;
+      color: $white;
+    }
+  }
+}
