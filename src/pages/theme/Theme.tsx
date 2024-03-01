@@ -3,11 +3,13 @@ import ThemeChanger from "../../components/theme/themeChanger/ThemeChanger";
 import ThemeSlider from "../../components/theme/themeSlider/ThemeSlider";
 import { useQuery } from "@tanstack/react-query";
 import { getMainSliderItems } from "../../apis";
-import ThemeCards from "../../components/theme/themeCards/ThemeCards";
 import "./themePage.scss";
 
 const LazyThemeMap = lazy(
   () => import("../../components/theme/themeMap/ThemeMap")
+);
+const LazyThemeCards = lazy(
+  () => import("../../components/theme/themeCards/ThemeCards")
 );
 
 const Theme = () => {
@@ -33,7 +35,7 @@ const Theme = () => {
           <Suspense fallback={<div>Loading...</div>}>
             <div className="theme-map-cards-container">
               <LazyThemeMap data={themeQuery.data} />
-              <ThemeCards data={themeQuery.data} />
+              <LazyThemeCards data={themeQuery.data} />
             </div>
           </Suspense>
         </>

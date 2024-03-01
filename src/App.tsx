@@ -10,6 +10,7 @@ const SplitLogin = lazy(() => import("./pages/login/Login"));
 const SplitLocation = lazy(() => import("./pages/location/Location"));
 const SplitTheme = lazy(() => import("./pages/theme/Theme"));
 const SplitSignup = lazy(() => import("./pages/signup/Signup"));
+const SplitStay = lazy(() => import("./pages/stay/Stay"));
 const App = () => {
   const [isLogin, setIsLogin] = useState(false);
   const [loginType, setLoginType] = useState(true);
@@ -26,6 +27,7 @@ const App = () => {
           <Route path="/" element={<SplitMain />} />
           <Route path="/location" element={<SplitLocation />} />
           <Route path="/theme" element={<SplitTheme />} />
+          <Route path="/stay" element={<SplitStay />} />
           <Route path="/map" element={<Map />} />
           <Route
             path="/login"
