@@ -37,7 +37,11 @@ const MainStay = () => {
               >
                 <div className="img-container">
                   <span>
-                    <img src={item.firstimage} alt="숙박 이미지" />
+                    <img
+                      src={item.firstimage}
+                      alt="숙박 이미지"
+                      loading="lazy"
+                    />
                   </span>
                 </div>
                 <div className="text-container">

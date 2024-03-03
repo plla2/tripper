@@ -31,7 +31,11 @@ const MainHealing = () => {
               <div className={`item item${index}`} key={item.contentid}>
                 <a href={`/${item.contentid}`}>
                   <span>
-                    <img src={item.firstimage} alt="힐링 이미지" />
+                    <img
+                      src={item.firstimage}
+                      alt="힐링 이미지"
+                      loading="lazy"
+                    />
                   </span>
                   <div className="title-box">
                     <span className="title">{item.title}</span>
