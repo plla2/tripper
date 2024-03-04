@@ -1,26 +1,17 @@
 import { useState } from "react";
-import { useQuery } from "@tanstack/react-query";
-import { getMainSliderItems } from "../../../apis";
 import { Swiper, SwiperClass, SwiperSlide } from "swiper/react";
 import { Autoplay, Pagination, Navigation } from "swiper/modules";
 import { IoIosArrowBack } from "@react-icons/all-files/io/IoIosArrowBack";
 import { IoIosArrowForward } from "@react-icons/all-files/io/IoIosArrowForward";
+import { SliderItemsType, itemType } from "../../../types";
+import Button from "../../common/button/Button";
 import "./mainslider.scss";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
-import Button from "../../common/button/Button";
-import { itemType } from "../../../types";
 
-const MainSlider = () => {
-  const getMainSlider = useQuery({
-    queryKey: ["mainSliderItem"],
-    queryFn: () => getMainSliderItems("코스", 25, 15, 7, "Q"),
-  });
-
-  let selectedElements =
-    getMainSlider.data &&
-    getMainSlider.data.slice(0, 4).concat(getMainSlider.data.slice(5, 8));
+const MainSlider = ({ data, title }: SliderItemsType) => {
+  let selectedElements = data && data.slice(0, 4).concat(data.slice(5, 8));
 
   const [swiperIndex, setSwiperIndex] = useState(0);
   const [swiper, setSwiper] = useState<SwiperClass>();
@@ -56,8 +47,7 @@ const MainSlider = () => {
       }}
       className="mySwiper"
     >
-      {getMainSlider.isLoading && <div>Loading...</div>}
-      {getMainSlider.data &&
+      {data &&
         selectedElements.map((item: itemType) => (
           <SwiperSlide key={item.contentid} className="item-container">
             <div className="img-container">
@@ -68,7 +58,7 @@ const MainSlider = () => {
               />
             </div>
             <div className="content-container">
-              <strong className="content-header">Tripper만의 코스 추천</strong>
+              <strong className="content-header">{title}</strong>
               <span className="slide-text">{item.title}</span>
               <a href={`/${item.contentid}`} className="slide-link">
                 자세히 보기
@@ -88,7 +78,7 @@ const MainSlider = () => {
         <div className="index-container">
           <span>{swiperIndex + 1}</span>
           <span>{" / "}</span>
-          <span>{getMainSlider.data && selectedElements.length}</span>
+          <span>{data && selectedElements.length}</span>
         </div>
       </div>
     </Swiper>
